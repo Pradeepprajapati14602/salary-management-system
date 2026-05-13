@@ -1,0 +1,17 @@
+{
+  "name": "salary-mgmt",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "test": "pnpm --filter @salary-mgmt/shared build && pnpm --filter api exec vitest run --exclude tests/performance --exclude tests/unit/employee.repository.test.ts && pnpm --filter web test",
+    "test:all": "pnpm --filter @salary-mgmt/shared build && pnpm --filter api exec vitest run --exclude tests/performance && pnpm --filter web test",
+    "lint": "pnpm -r run lint",
+    "migrate": "pnpm --filter api run migrate:up",
+    "seed": "pnpm --filter api run seed",
+    "dev": "pnpm --parallel -r run dev"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
