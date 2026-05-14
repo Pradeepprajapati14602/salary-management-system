@@ -2,6 +2,10 @@
 
 Monorepo: **Express + PostgreSQL API**, **React + Vite web app**, **shared Zod schemas**.
 
+## Repository
+
+GitHub: [Pradeepprajapati14602/salary-management-system](https://github.com/Pradeepprajapati14602/salary-management-system)
+
 ## Prerequisites
 
 - Node.js 20+
@@ -15,11 +19,17 @@ pnpm install
 pnpm --filter @salary-mgmt/shared build
 ```
 
-Create `apps/api/.env`:
+Create `apps/api/.env` from `apps/api/.env.example`:
 
 ```env
 DATABASE_URL=postgres://app:secret@localhost:5432/salary_mgmt
 PORT=3001
+```
+
+PowerShell:
+
+```powershell
+Copy-Item apps/api/.env.example apps/api/.env
 ```
 
 Start Postgres (optional if you only run unit tests without the PG repository suite):
@@ -72,6 +82,30 @@ pnpm test
 ```
 
 `pnpm test` runs the API suite excluding the slow single-file PG repository test; use `pnpm test:all` to include it, or run `pnpm --filter api exec vitest run tests/unit/employee.repository.test.ts` alone.
+
+## Final Project Checklist
+
+- Public GitHub repo: Yes (link above).
+- README with setup instructions: Yes.
+- `.env.example`: Yes (`apps/api/.env.example`).
+- Seed script working: Yes (`pnpm --filter api seed`).
+- Tests passing: Yes (`pnpm test` at repo root).
+- Deployment link: Pending (add after deploy).
+- Demo video: Optional, pending.
+- Commit history quality (TDD): Needs improvement if submitted with a single large commit.
+
+## Deployment
+
+Add your live deployment URL here after hosting API/web:
+
+- Web: `TBD`
+- API: `TBD`
+
+## Demo Video
+
+Optional but recommended. Add Loom/YouTube link here:
+
+- Demo: `TBD`
 
 ## Project layout
 
